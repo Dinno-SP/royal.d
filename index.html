@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas PWPB - Toko Buah</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        /* Menata navigasi */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color: rgba(51, 51, 51, 0.5); /* Warna abu-abu transparan */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Memisahkan logo di kiri dan icon di kanan */
+  padding: 0 20px;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Memberikan bayangan untuk navbar */
+}
+
+/* Styling untuk bagian kiri (logo) */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+/* Bagian kanan untuk ikon WhatsApp dan Discord */
+.navbar-list {
+  display: flex;
+}
+
+.navbar-list a {
+  margin-left: 15px;
+}
+
+.navbar-list img.icon {
+  width: 30px;
+  height: auto;
+  filter: brightness(0) invert(1); /* Mengubah ikon menjadi putih */
+  transition: transform 0.3s ease; /* Animasi saat hover */
+}
+
+.navbar-list img.icon:hover {
+  transform: scale(1.2); /* Zoom saat ikon dihover */
+}
+
+/* Tambahan reset untuk gambar */
+img {
+  display: block; /* Menghilangkan space bawah gambar yang disebabkan oleh display inline */
+  max-width: 100%;
+  height: auto;
+}
+
+/* Menambahkan gambar latar belakang */
+body {
+  font-family: 'Roboto', sans-serif; /* Menggunakan font Roboto untuk seluruh halaman */
+}
+
+/* Hero Section */
+.hero {
+  background-image: url('assets/BG.jpg'); /* Ganti dengan gambar latar baru */
+  background-size: cover; /* Membuat gambar latar memenuhi seluruh area */
+  background-position: center; /* Memusatkan gambar latar */
+  height: 100vh; /* Tinggi dari hero section */
+  display: flex; /* Untuk menyusun teks di tengah */
+  justify-content: center; /* Memusatkan secara horizontal */
+  align-items: center; /* Memusatkan secara vertikal */
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: relative; /* Agar elemen anak dengan absolute positioning bisa diatur */
+}
+
+/* Overlay untuk latar belakang agar teks lebih jelas */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Overlay hitam transparan untuk meningkatkan keterbacaan */
+  z-index: 1; /* Overlay berada di bawah teks tetapi di atas gambar */
+}
+
+/* Teks pada hero section */
+.hero-content {
+  position: relative; /* Membuat elemen berada di atas overlay */
+  z-index: 2; /* Memastikan teks berada di atas overlay */
+  color: white; /* Warna teks tetap putih */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Menambahkan bayangan teks untuk kontras */
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+/* Highlight Section */
+.highlight {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 20px;
+  box-sizing: border-box;
+  background-color: #f8f9fa;
+}
+
+.highlight-item {
+  text-align: center;
+  max-width: 300px;
+}
+
+.highlight-item img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-item h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.highlight-item p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Footer */
+footer {
+  background-color: #1c1e21;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.scroll-button {
+  background-color: transparent;  /* Transparent background */
+  color: white;                   /* White text */
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid white;        /* White border */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and text color */
+  z-index: 10;                    /* Ensure it's above other content */
+}
+
+.scroll-button:hover {
+  background-color: #ffd700;      /* Gold background on hover */
+  color: black;                   /* Change text color to black on hover for contrast */
+  border-color: #ffd700;          /* Match border with background color */
+}
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="assets/logo.png" alt="Logo" class="navbar-logo"> 
+        </div>          
+        <div class="navbar-list">
+            <a href="https://wa.me/6289512532603" target="_blank">
+                <img src="assets/whatsapp.png" alt="WhatsApp" class="icon">
+            </a>
+            <a href="https://discord.gg/5qPhdfTyrR" target="_blank">
+                <img src="assets/discord.png" alt="Discord" class="icon">
+            </a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Royal.D Website</h1>
+            <p>Browse my collection of high quality Scripts. From Auto Surgery to PTHT, we have everything you need!<br>Join my Discord Server or Contact me on Whatsapp for more.</p>
+            <button class="scroll-button" onclick="scrollToHighlight()">Explore More</button> <!-- Button to scroll down -->
+        </div>
+    </section>    
+
+    <!-- Section Highlight -->
+    <section class="highlight">
+        <div class="highlight-item">
+            <img src="assets/gl.png" alt="Buah Segar">
+            <h3>Growlauncher</h3>
+            <p><b>GrowLauncher</b> is a third-party application used by some Growtopia players to run various scripts or modifications within the game. GrowLauncher is typically used to facilitate game manipulation or provide access to features that are not available in the official version.</p>
+        </div>
+        <div class="highlight-item">
+            <img src="assets/gt.jpg" alt="Buah Organik">
+            <h3>Growtopia</h3>
+            <p><b>Growtopia</b> is a 2D multiplayer online sandbox game developed by Robinson Technologies and Hamumu Software, and it is currently owned by Ubisoft. In this game, players can interact with each other, build worlds, farm, trade, and create new items.</p>
+        </div>
+        <div class="highlight-item">
+            <img src="assets/script.jpg" alt="Pengiriman Cepat">
+            <h3>Script</h3>
+            <p><b>Growtopia Script</b> refers to scripts or codes used to modify behavior within Growtopia, often giving unfair advantages to players. For example, scripts can be used for auto-farming, simplifying the search for rare items, or even bypassing game limitations.</p>
+        </div>
+    </section>
+
+    <!-- Section Footer -->
+    <footer>
+        <p>&copy; 2024 Royal D Store. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+<script>
+    function scrollToHighlight() {
+        document.querySelector('.highlight').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+    }
+</script>
