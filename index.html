@@ -114,37 +114,6 @@
             margin-bottom: 30px;
         }
 
-        .highlight {
-            display: flex;
-            justify-content: space-around;
-            padding: 50px 20px;
-            box-sizing: border-box;
-            background-color: #f8f9fa;
-        }
-
-        .highlight-item {
-            text-align: center;
-            max-width: 300px;
-        }
-
-        .highlight-item img {
-            width: 100%;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .highlight-item h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .highlight-item p {
-            font-size: 16px;
-            color: #666;
-        }
-
         /* Item List Section */
         .item-list {
             padding: 50px 20px;
@@ -261,28 +230,9 @@
         <div class="hero-content">
             <h1>Welcome to Royal.D Website</h1>
             <p>Browse my collection of high quality Scripts. From Auto Surgery to PTHT, we have everything you need!<br>Join my Discord Server or Contact me on Whatsapp for more.</p>
-            <button class="scroll-button" onclick="scrollToHighlight()">Explore More</button>
             <button class="scroll-button" onclick="scrollToItems()">View Item List</button>
         </div>
     </section>    
-
-    <section class="highlight">
-        <div class="highlight-item">
-            <img src="assets/gl.png" alt="Fresh Fruit">
-            <h3>Growlauncher</h3>
-            <p><b>GrowLauncher</b> is a third-party application used by some Growtopia players to run various scripts or modifications within the game.</p>
-        </div>
-        <div class="highlight-item">
-            <img src="assets/gt.jpg" alt="Organic Fruit">
-            <h3>Growtopia</h3>
-            <p><b>Growtopia</b> is a 2D multiplayer online sandbox game developed by Robinson Technologies and Hamumu Software.</p>
-        </div>
-        <div class="highlight-item">
-            <img src="assets/script.jpg" alt="Fast Delivery">
-            <h3>Script</h3>
-            <p><b>Growtopia Script</b> refers to scripts or codes used to modify behavior within Growtopia.</p>
-        </div>
-    </section>
 
 <!-- Item List Section -->
 <section class="item-list" id="item-list">
@@ -541,11 +491,6 @@
     </footer>
 
     <script>
-        function scrollToHighlight() {
-            document.querySelector('.highlight').scrollIntoView({ 
-                behavior: 'smooth' 
-            });
-        }
 
         function scrollToItems() {
             document.querySelector('#item-list').scrollIntoView({ 
