@@ -6,6 +6,34 @@
     <title>Royal D Store</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <style>
+        /* Animasi gradient bergerak */
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .item-list {
+            padding: 50px 20px;
+            background: linear-gradient(240deg, #000000, #2f2f2f, #001f4d, #003366);
+            color: #c0d4ff; /* teks biru muda gelap */
+            text-align: center;
+        }
+
+        /* Background gradient bergerak untuk payment methods */
+        .payment-footer-xyz123 {
+            background: linear-gradient(270deg, #000000, #2f2f2f, #001f4d, #003366, #001f4d, #2f2f2f, #000000);
+            background-size: 600% 600%;
+            animation: gradientMove 5s ease infinite;
+            color: #c0d4ff;
+        }
+
         /* Menata navigasi */
         * {
             margin: 0;
@@ -130,14 +158,11 @@
         }
 
         .item-list table {
-            width: 80%; /* Lebar tabel */
-            margin: 0 auto; /* Pusatkan tabel */
-            border-radius: 8px; /* Sudut melengkung */
-            border: 1px solid white; /* Border putih tipis */
-            background-color: transparent; /* Transparan agar terlihat elegan */
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan jika ingin efek elegan */
-            
+            background-color: #000000; /* abu-abu sangat gelap, solid */
+            border: 1px solid #4a4a4a;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            color: #ffffff;
         }
         
 
@@ -180,6 +205,7 @@
             cursor: pointer;
             transition: background-color 0.3s ease, color 0.3s ease;
             z-index: 10;
+            margin-top: 10px;
         }
 
         .scroll-button:hover {
@@ -192,7 +218,7 @@
             width: 100%; /* Ubah dari 80% ke 100% agar tidak kepotong */
             border-radius: 8px;
             border: 1px solid white;
-            background-color: transparent;
+            background-color: #1f1f1f;
             overflow: hidden;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
@@ -346,8 +372,9 @@ background-color: #131416;
 }
 
 .btn-xyz123 {
-  background: #FFD700;
-  color: #000;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
   padding: 10px 20px;
   border-radius: 8px;
   font-weight: bold;
